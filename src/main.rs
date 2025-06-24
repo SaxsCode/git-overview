@@ -1,3 +1,12 @@
+use clap::Parser;
+
+#[derive(Parser)]
+struct Cli {
+    command: String,
+    week: u8,
+}
+
 fn main() {
-    println!("Hello, world!");
+    let args = Cli::parse();
+    println!("pattern: {:?}, path: {:?}", args.command, args.week);
 }
